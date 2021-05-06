@@ -25,9 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Setting up .env
 
 Make sure to set up the `.env` file with the following declarations:
+
 AD_CLIENT_ID=`Insert Registered App Client ID`
+
 AD_OBJECT_ID=`Insert Object ID`
+
 AD_REDIRECT_URI=`Insert Application Redirect URI`
+
 AD_TENANT_ID=`Insert Azure Tenant ID`
 
 ## Further help
