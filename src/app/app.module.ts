@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { MsalInterceptor, MsalInterceptorConfiguration, MsalModule, MsalService, MSAL_GUARD_CONFIG, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG } from '@azure/msal-angular';
+import { MsalInterceptor, MsalInterceptorConfiguration, MsalModule, MsalService, MSAL_INSTANCE, MSAL_INTERCEPTOR_CONFIG } from '@azure/msal-angular';
 import { InteractionType, IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { environment } from './../environments/environment';
 import { PublicPageComponent } from './components/public-page/public-page.component';
 import { RestrictedPageComponent } from './components/restricted-page/restricted-page.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
@@ -44,8 +43,7 @@ export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
   declarations: [
     AppComponent,
     PublicPageComponent,
-    RestrictedPageComponent,
-    HomePageComponent
+    RestrictedPageComponent
   ],
   imports: [
     BrowserModule,
