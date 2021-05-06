@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { environment } from './../environments/environment';
 import { PublicPageComponent } from './components/public-page/public-page.component';
 import { RestrictedPageComponent } from './components/restricted-page/restricted-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
@@ -32,7 +33,8 @@ export function MSALInstanceFactory(): IPublicClientApplication {
   declarations: [
     AppComponent,
     PublicPageComponent,
-    RestrictedPageComponent
+    RestrictedPageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
