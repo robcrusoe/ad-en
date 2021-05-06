@@ -13,7 +13,10 @@ const targetPath = isProduction ? `./src/environments/environment.prod.ts` : `./
 const environmentFC = `
   export const environment = {
     production: ${isProduction},
-    AD_CLIENT_ID: "${process.env.AD_CLIENT_ID}"
+    AD_CLIENT_ID: "${process.env.AD_CLIENT_ID}",
+    AD_OBJECT_ID: "${process.env.AD_OBJECT_ID}",
+    AD_REDIRECT_URI: "${process.env.AD_REDIRECT_URI}",
+    AD_TENANT_ID: "${process.env.AD_TENANT_ID}"
   };
 `;
 
