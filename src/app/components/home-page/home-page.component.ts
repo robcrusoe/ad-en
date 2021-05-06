@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MsalService } from '@azure/msal-angular';
 
@@ -8,8 +9,12 @@ import { MsalService } from '@azure/msal-angular';
 })
 export class HomePageComponent implements OnInit {
 
+  profileName: string = 'There';
+  profileMail: string = null;
+
   constructor(
-    private msalService: MsalService
+    private msalService: MsalService,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -34,6 +39,24 @@ export class HomePageComponent implements OnInit {
 
   isLoggedIn(): boolean {
     return this.msalService.instance.getActiveAccount() !== null;
+  }
+
+  getProfile() {
+    this.http.get('https://graph.microsoft.com/v1.0/me').subscribe((response: any) => {
+      console.log('profile success: ', response);
+      this.profileName = response.displayName.split(', ').join(' ');
+      this.profileMail = response.mail;
+    }, (error) => {
+      console.log('profile error: ', error);
+    })
+  }
+
+  getProfileName(): string {
+    return this.profileName;
+  }
+
+  getProfileMail(): string {
+    return this.profileMail;
   }
 
 }
